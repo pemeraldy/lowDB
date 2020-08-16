@@ -1,12 +1,65 @@
 {
   "store": [
     {
-      "test": "Gucci Gucci",
-      "id": "6XvTJgvXiA1vRxuqVVJij"
+      "id": "111445GB3",
+      "title": "G-shock",
+      "description": "Feel classic all the time on time",
+      "images": "",
+      "manufacture_details": {
+        "model_number": "A123X",
+        "color_variants": [
+          "green",
+          "blue",
+          "Yellow"
+        ]
+      },
+      "shipping_details": {
+        "weight": "10g"
+      },
+      "quantity": 99,
+      "pricing": {
+        "price": 100
+      }
     },
     {
-      "G-Shock": "G-shock v2",
-      "id": "-jjWinnlndHVaudvQSF_Y"
+      "id": "111445T3",
+      "title": "Genva",
+      "description": "The time teller of all time",
+      "images": "",
+      "manufacture_details": {
+        "model_number": "A121d",
+        "color_variants": [
+          "Gold",
+          "Black",
+          "Metal"
+        ]
+      },
+      "shipping_details": {
+        "weight": "15g"
+      },
+      "quantity": 55,
+      "pricing": {
+        "price": 120
+      }
+    },
+    {
+      "id": "uv5VaJdZvlbedbQUe8aRv",
+      "title": "Swiss",
+      "description": "Feel classic all the time on time",
+      "images": "",
+      "manufacture_details": {
+        "model_number": "Sw232",
+        "color_variants": [
+          "gold"
+        ]
+      },
+      "shipping_details": {
+        "weight": "6g"
+      },
+      "quantity": 9,
+      "pricing": {
+        "price": 40
+      }
     }
   ]
 }
