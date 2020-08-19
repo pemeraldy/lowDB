@@ -15,7 +15,7 @@
         "analogue"
       ],
       "gender": "unisex",
-      "unit_price": "7000",
+      "unit_price": 7000,
       "product_details": {
         "instock": 20,
         "weight": "12g",
@@ -46,7 +46,7 @@
         "analogue"
       ],
       "gender": "unisex",
-      "unit_price": "8760",
+      "unit_price": 8760,
       "product_details": {
         "instock": 20,
         "weight": "0.4g",
@@ -73,7 +73,7 @@
         "digital"
       ],
       "gender": "male",
-      "unit_price": "1870",
+      "unit_price": 22000,
       "product_details": {
         "instock": 20,
         "weight": "0.4g",
@@ -99,7 +99,7 @@
         "male"
       ],
       "gender": "male",
-      "unit_price": "1870",
+      "unit_price": 25000,
       "product_details": {
         "instock": 20,
         "weight": "0.4g",
@@ -125,7 +125,7 @@
         "male"
       ],
       "gender": "male",
-      "unit_price": "1870",
+      "unit_price": 20000,
       "product_details": {
         "instock": 20,
         "weight": "0.4g",

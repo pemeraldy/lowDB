@@ -1,93 +1,82 @@
-const express = require('express')
-const cors = require('cors')
-const { nanoid } = require('nanoid')
-const lowDb = require('lowdb')
-const fileSync = require('lowdb/adapters/FileSync')
-const bodyParser = require('body-parser')
+const express = require("express");
+const cors = require("cors");
+const lowDb = require("lowdb");
+const fileSync = require("lowdb/adapters/FileSync");
+const bodyParser = require("body-parser");
+const _ = require("lodash");
 
-const db = lowDb(new fileSync('store.json'))
+const db = lowDb(new fileSync("store.json"));
 
-db.defaults({ products: [] }).write()
+db.defaults({ products: [] }).write();
 
-const app = express()
-app.use(cors())
-app.use(bodyParser.json())
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get('/products', (req, res) => {
-    const data = db.get('products').value()
-    return res.json(data)
-})
+app.get("/", (req, res) => {
+  res.json({
+    health: "ok",
+  });
+});
 
-app.get('/products/:id', (req, res) => {
-    const data = db.get('products').find({ id: req.params.id }).value()
-    return res.json(data)
-})
+/**
+ *
+ *
+ * /products?category=adult
+ * /products?category=adult,digital
+ * /products?category=adult,digital&sort=high_to_low
+ */
+app.get("/products", (req, res) => {
+  let data = [];
+  let query = db.get("products");
+  let { category, sort } = req.query;
+  if (category) {
+    categories = category.split(",");
+    query = query.filter((item) => {
+      let intersection = _.intersection(item.categories, categories);
+      return intersection.length > 0;
+    });
+  }
 
-app.get('/categories', (req, res) => {
-    /*Not good for perfomance*/
-    const cats = db.get('products').map('categories').flatten().uniq().value()
-    return res.json(cats)
-})
+  if (sort) {
+    sort = sort.split(",");
+    sort = sort[0]; // options are low_to_high, high_to_low
+    query = query.sort((a, b) =>
+      ["low_to_high"].includes(sort)
+        ? a.unit_price - b.unit_price
+        : b.unit_price - a.unit_price
+    );
+  }
 
-// get all male watches
-app.get('/products/male', (req, res) => {
-    const data = db.get('products').filter(prod => {
-        return prod.gender == "male"
-    }).value()
-    console.log(data)
-    return res.json(data)
-})
+  data = query.value();
+  return res.json(data);
+});
 
-// get all female watches
-app.get('/products/female', (req, res) => {
-    const data = db.get('products').filter(prod => {
-        return prod.gender == "female"
-    }).value()
-    console.log(data)
-    return res.json(data)
-})
+app.get("/products/:id", (req, res) => {
+  const data = db
+    .get("products")
+    .find({ id: req.params.id })
+    .value();
+  if (data) {
+    return res.json(data);
+  }
+  return res.status(404).send();
+});
 
-// get a specific watch brand
-app.get('/products/female', (req, res) => {
-    const data = db.get('products').filter(prod => {
-        return prod.brand == "Hoblot"
-    }).value()
-    console.log(data)
-    return res.json(data)
-})
+app.get("/categories", (_req, res) => {
+  /*Not good for perfomance but works for our scale*/
+  const cats = db
+    .get("products")
+    .map("categories")
+    .flatten()
+    .uniq()
+    .value();
+  return res.json(cats);
+});
 
-app.post('/products/new', (req, res) => {
-    const product = req.body
-    console.log(product)
-    db.get('products').push({
-        ...product, id: nanoid()
-    }).write()
-    res.json({
-        success: true
-    })
-    // res.redirect('/products')
-})
+app.get("*", (_, res) => {
+  return res.status(404);
+});
 
-app.get('/categories', (req, res) => {
-    const cats = db.get('categories').value()
-    return res.json(cats)
-})
-app.post('/categories/new', (req, res) => {
-    const category = req.body
-    // const value = Object.values(category)
-    db.get('categories').push(category.cat).write()
-    res.json({
-        success: true
-    })
-})
+module.exports = app;
 
-app.get('/categories/adults', (req, res) => {
-    const adults = db.get('categories')
-        .find('adults')
-        .value()
-    console.log(adults)
-
-    return res.send(adults)
-})
-
-module.exports = app
