@@ -3,8 +3,12 @@
     {
       "name": "Apple Watch Band Apple Watch 4 Digital",
       "brand": "apple",
-      "img": "",
-      "category": [
+      "images": {
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      "categories": [
         "adults",
         "smartwatches",
         "digital",
@@ -30,8 +34,12 @@
     {
       "name": "Men Women Silicone Watch Band Outdoor Wristwatch Strap Replacement For Apple Watch DJA99",
       "brand": "apple",
-      "img": "",
-      "category": [
+      "images": {
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      "categories": [
         "adults",
         "smartwatches",
         "digital",
@@ -54,9 +62,14 @@
     {
       "name": "G Style Shock Alike Waterproof Outdoor Sports Watches Men",
       "brand": "G shock",
-      "img": "",
-      "category": [
+      "images": {
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      "categories": [
         "adults",
+        "male",
         "digital"
       ],
       "gender": "male",
@@ -76,10 +89,14 @@
     {
       "name": "Watches Men",
       "brand": "G shock",
-      "img": "",
-      "category": [
+      "images": {
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      "categories": [
         "adults",
-        "digital"
+        "male"
       ],
       "gender": "male",
       "unit_price": "1870",
@@ -98,9 +115,14 @@
     {
       "name": "Hublot Dives",
       "brand": "Hublot",
-      "img": "",
-      "category": [
-        "adults"
+      "images": {
+        "small": "",
+        "medium": "",
+        "large": ""
+      },
+      "categories": [
+        "adults",
+        "male"
       ],
       "gender": "male",
       "unit_price": "1870",
@@ -119,12 +141,5 @@
       },
       "id": "0ApLQ-S7pQEdXiQ8Zlq9z"
     }
-  ],
-  "categories": [
-    "adults",
-    "children",
-    "smartwatches",
-    "digital",
-    "analogue"
   ]
 }

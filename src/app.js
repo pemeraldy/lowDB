@@ -18,6 +18,17 @@ app.get('/products', (req, res) => {
     return res.json(data)
 })
 
+app.get('/products/:id', (req, res) => {
+    const data = db.get('products').find({ id: req.params.id }).value()
+    return res.json(data)
+})
+
+app.get('/categories', (req, res) => {
+    /*Not good for perfomance*/
+    const cats = db.get('products').map('categories').flatten().uniq().value()
+    return res.json(cats)
+})
+
 // get all male watches
 app.get('/products/male', (req, res) => {
     const data = db.get('products').filter(prod => {
@@ -79,5 +90,4 @@ app.get('/categories/adults', (req, res) => {
     return res.send(adults)
 })
 
-const PORT = 4000
-app.listen(PORT, () => { console.log(`sever started on port ${PORT}`) })
+module.exports = app
