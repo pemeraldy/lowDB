@@ -1,65 +1,130 @@
 {
-  "store": [
+  "products": [
     {
-      "id": "111445GB3",
-      "title": "G-shock",
-      "description": "Feel classic all the time on time",
-      "images": "",
-      "manufacture_details": {
-        "model_number": "A123X",
-        "color_variants": [
+      "name": "Apple Watch Band Apple Watch 4 Digital",
+      "brand": "apple",
+      "img": "",
+      "category": [
+        "adults",
+        "smartwatches",
+        "digital",
+        "analogue"
+      ],
+      "gender": "unisex",
+      "unit_price": "7000",
+      "product_details": {
+        "instock": 20,
+        "weight": "12g",
+        "material": "rubber",
+        "variation": [],
+        "colors": [
           "green",
+          "yellow",
           "blue",
-          "Yellow"
-        ]
-      },
-      "shipping_details": {
-        "weight": "10g"
-      },
-      "quantity": 99,
-      "pricing": {
-        "price": 100
-      }
-    },
-    {
-      "id": "111445T3",
-      "title": "Genva",
-      "description": "The time teller of all time",
-      "images": "",
-      "manufacture_details": {
-        "model_number": "A121d",
-        "color_variants": [
-          "Gold",
-          "Black",
-          "Metal"
-        ]
-      },
-      "shipping_details": {
-        "weight": "15g"
-      },
-      "quantity": 55,
-      "pricing": {
-        "price": 120
-      }
-    },
-    {
-      "id": "uv5VaJdZvlbedbQUe8aRv",
-      "title": "Swiss",
-      "description": "Feel classic all the time on time",
-      "images": "",
-      "manufacture_details": {
-        "model_number": "Sw232",
-        "color_variants": [
+          "purple",
+          "silver",
           "gold"
         ]
-      },
-      "shipping_details": {
-        "weight": "6g"
-      },
-      "quantity": 9,
-      "pricing": {
-        "price": 40
       }
+    },
+    {
+      "name": "Men Women Silicone Watch Band Outdoor Wristwatch Strap Replacement For Apple Watch DJA99",
+      "brand": "apple",
+      "img": "",
+      "category": [
+        "adults",
+        "smartwatches",
+        "digital",
+        "analogue"
+      ],
+      "gender": "unisex",
+      "unit_price": "8760",
+      "product_details": {
+        "instock": 20,
+        "weight": "0.4g",
+        "material": "rubber",
+        "variation": [],
+        "colors": [
+          "white",
+          "blue"
+        ]
+      },
+      "id": "3SBW64GEY-gWFQ-lzSQVe"
+    },
+    {
+      "name": "G Style Shock Alike Waterproof Outdoor Sports Watches Men",
+      "brand": "G shock",
+      "img": "",
+      "category": [
+        "adults",
+        "digital"
+      ],
+      "gender": "male",
+      "unit_price": "1870",
+      "product_details": {
+        "instock": 20,
+        "weight": "0.4g",
+        "material": "Resin",
+        "variation": [],
+        "colors": [
+          "white",
+          "blue"
+        ]
+      },
+      "id": "pOTJio809jzfONnRiNQkI"
+    },
+    {
+      "name": "Watches Men",
+      "brand": "G shock",
+      "img": "",
+      "category": [
+        "adults",
+        "digital"
+      ],
+      "gender": "male",
+      "unit_price": "1870",
+      "product_details": {
+        "instock": 20,
+        "weight": "0.4g",
+        "material": "Resin",
+        "variation": [],
+        "colors": [
+          "white",
+          "blue"
+        ]
+      },
+      "id": "BXaLVAPFdyWSgo4uS0eIO"
+    },
+    {
+      "name": "Hublot Dives",
+      "brand": "Hublot",
+      "img": "",
+      "category": [
+        "adults"
+      ],
+      "gender": "male",
+      "unit_price": "1870",
+      "product_details": {
+        "instock": 20,
+        "weight": "0.4g",
+        "material": "Resin",
+        "variation": [
+          "black",
+          "Metal"
+        ],
+        "colors": [
+          "white",
+          "blue"
+        ]
+      },
+      "id": "0ApLQ-S7pQEdXiQ8Zlq9z"
     }
+  ],
+  "categories": [
+    "adults",
+    "children",
+    "smartwatches",
+    "digital",
+    "analogue"
   ]
 }
